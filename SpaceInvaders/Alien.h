@@ -3,13 +3,17 @@
 #include <iostream>
 using namespace std;
 
+struct Point{
+    int x, y;
+};
+
 class Alien{
 public:
     Alien();
     ~Alien();
 
 private:
-
+    Point point;
 };
 
 #endif

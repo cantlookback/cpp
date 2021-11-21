@@ -6,6 +6,7 @@ Game::Game(){
             field[i][j] = '*';
         }
     }
+    
 }
 
 Game::~Game(){
