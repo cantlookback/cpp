@@ -2,8 +2,11 @@
 #define GAME_H
 #include <iostream>
 #include <vector>
+#include <thread>
+#include <Windows.h>
 #include "Player.h"
 #include "Alien.h"
+
 using namespace std;
 
 class Game{
@@ -11,8 +14,9 @@ class Game{
     Game();
     ~Game();
 
-    void printField();
+    void gameCycle();
 
+    void printField();
 private:
     Player player;
     vector<Alien> aliens;
