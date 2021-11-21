@@ -8,7 +8,7 @@ public:
     BinaryTree(const int &m_length, const int &m_base);
     ~BinaryTree();
 
-    void addTree();
+    void addTree(const int &n, const int &i = 1, const char &dir = 'L');
     void printTree();
 
 private:
