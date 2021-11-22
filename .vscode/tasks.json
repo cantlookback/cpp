@@ -32,6 +32,7 @@
                 "Field.cpp",
                 "Predator.cpp",
                 "Victim.cpp",
+                "../Utilities/utilities.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
