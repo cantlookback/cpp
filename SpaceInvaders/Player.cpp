@@ -1,7 +1,7 @@
 #include "Player.h"
 
-Player::Player(){
-    point.x = 5;
+Player::Player(const int &m_x){
+    point.x = m_x;
     point.y = 0;
 }
 
@@ -10,19 +10,27 @@ Player::~Player(){
 }
 
 void Player::move(){
-    bool trigger = true;
     while(true){
         if(kbhit()){
             switch(getch()){
-                case 65: //LEFT A
+                case 97: //LEFT a
+                    if (this->point.x == 0)
+                        break;
                     this->point.x--;
-                    trigger = false;
                     break;
-                case 68:    //RIGHT D
+                case 100:    //RIGHT d
+                    if (this->point.x == 14)
+                        break;
                     this->point.x++;
-                    trigger = false;
+                    break;
+                case 119:   //SHOOT w
+                    this->shoot();
                     break;
             }
         }
     }
+}
+
+void Player::shoot(){
+    bullets.push_back(new Bullet{point});
 }

@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include "Player.h"
 #include "Alien.h"
+#include "Bullet.h"
 
 using namespace std;
 
@@ -14,13 +15,16 @@ class Game{
     Game();
     ~Game();
 
+    void printField();
+    void checkCollision();
     void gameCycle();
 
-    void printField();
+    friend class Player;
 private:
-    Player player;
+    static const int fieldH = 10, fieldW = 15;
+    Player player{fieldW / 2};
     vector<Alien> aliens;
-    char field[10][10];
+    char field[fieldW][fieldH];
 };
 
 

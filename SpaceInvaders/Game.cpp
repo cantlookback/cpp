@@ -1,8 +1,8 @@
 #include "Game.h"
 
 Game::Game(){
-    for (int x = 0; x < 10; x++){
-        for (int y = 0; y < 10; y++){
+    for (int x = 0; x < fieldW; x++){
+        for (int y = 0; y < fieldH; y++){
             field[x][y] = '*';
         }
     }
@@ -14,27 +14,43 @@ Game::~Game(){
 }
 
 void Game::printField(){
-    for (int x = 0; x < 10; x++){
-        for (int y = 0; y < 10; y++){
+    for (int x = 0; x < fieldW; x++){
+        for (int y = 0; y < fieldH; y++){
             field[x][y] = '*';
         }
     }
+    
+    for (auto bullet : player.bullets){
+        field[bullet->point.x][bullet->point.y] = '^';
+    }
+
     field[player.point.x][player.point.y] = player.tag;
-    for (int x = 9; x >= 0; x--){
-        for (int y = 0; y < 10; y++){
-            cout << field[y][x] << ' ';
+
+    checkCollision();
+    
+    for (int y = fieldH-1; y >= 0; y--){
+        for (int x = 0; x < fieldW; x++){
+            cout << field[x][y] << ' ';
         }
         cout << endl;
+    }
+}
+
+void Game::checkCollision(){
+    for (auto bullet : player.bullets){
+        if (bullet->point.y > fieldH-1){
+            delete bullet;
+            player.bullets.erase(player.bullets.begin());
+        }
     }
 }
 
 void Game::gameCycle(){
     thread t1(&Player::move, &player);
     t1.detach();
-    for (int i = 0; i < 50; i++){
+    for (int i = 0; i < 1000; i++){
         printField();
         Sleep(100);
         system("cls");
     }
 }
-
