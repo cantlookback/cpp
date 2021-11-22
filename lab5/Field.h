@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Creature.h"
+#include "../Utilities/utilities.h"
+#include <Windows.h>
 
 using namespace std;
 

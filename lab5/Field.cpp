@@ -84,13 +84,14 @@ void Field::printField(){
 }
 
 void Field::start(){
+    system("cls");
     printField();
     Sleep(1000);
-    system("cls");
+    clearScreen();
     for (int i = 1; i <= turns; i++){
         turn(creats);
         printField();
         Sleep(1000);
-        system("cls");
+        clearScreen();
     }
 }

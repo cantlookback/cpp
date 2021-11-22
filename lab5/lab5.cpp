@@ -20,7 +20,7 @@ int main(){
     
     vector<Creature*> creats = {tiger, zebra, lion, frog, squirrel, buffalo};
 
-    Field game{creats, 20};
+    Field game{creats, 10};
     game.start();
 
     // int choice, k, i, turns;
