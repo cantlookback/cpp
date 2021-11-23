@@ -1,12 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
+#pragma pointers_to_members( full_generality, virtual_inheritance )
 #include <iostream>
 #include <vector>
 #include <Windows.h>
 #include "Player.h"
 #include "Bullet.h"
-#include "Alien.h"
-#include "../Utilities/utilities.h"
+//#include "Alien.h"
 
 using namespace std;
 

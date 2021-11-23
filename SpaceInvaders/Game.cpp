@@ -21,7 +21,9 @@ void Game::printField(){
     }
     
     for (auto bullet : player.bullets){
+        player.m1.lock();
         field[bullet->point.x][bullet->point.y] = '^';
+        player.m1.unlock();
     }
 
     field[player.point.x][player.point.y] = player.tag;
@@ -37,21 +39,27 @@ void Game::printField(){
 }
 
 void Game::checkCollision(){
-    for (auto bullet : player.bullets){
-        if (bullet->point.y > fieldH-1){
-            delete bullet;
+    player.m1.lock();
+    for (int i = 0; i < player.bullets.size();){
+        if (player.bullets[i]->point.y > fieldH-2){
+            player.bullets[i]->alive = false;
+            delete player.bullets[i];
             player.bullets.erase(player.bullets.begin());
-        }
+            //player.bullets.shrink_to_fit();
+        } else i++;
     }
+    player.m1.unlock();
 }
 
 void Game::gameCycle(){
     system("cls");
     thread t1(&Player::move, &player);
     t1.detach();
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < 1000; i){
         printField();
-        Sleep(100);
-        clearScreen();
+        Sleep(1);
+        //clearScreen();
+        system("cls");
     }
+    system("cls");
 }

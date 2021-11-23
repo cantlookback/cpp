@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe сборка активного файла"
+            "preLaunchTask": "Space Invaders build"
         }
     ]
 }

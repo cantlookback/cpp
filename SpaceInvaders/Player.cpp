@@ -11,8 +11,8 @@ Player::~Player(){
 
 void Player::move(){
     while(true){
-        if(kbhit()){
-            switch(getch()){
+        if(_kbhit()){
+            switch(_getch()){
                 case 97: //LEFT a
                     if (this->point.x == 0)
                         break;
@@ -32,5 +32,7 @@ void Player::move(){
 }
 
 void Player::shoot(){
+    m1.lock();
     bullets.push_back(new Bullet{point});
+    m1.unlock();
 }
