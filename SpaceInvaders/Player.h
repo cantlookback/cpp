@@ -20,7 +20,7 @@ public:
 private:
     vector<Bullet*> bullets;
     Point point;
-    int health;
+    int health, cooldown;
     const char tag = 'T';
 };
 

@@ -46,6 +46,7 @@ void Game::checkCollision(){
 }
 
 void Game::gameCycle(){
+    system("cls");
     thread t1(&Player::move, &player);
     t1.detach();
     for (int i = 0; i < 100; i++){

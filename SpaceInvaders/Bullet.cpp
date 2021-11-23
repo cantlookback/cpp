@@ -1,6 +1,6 @@
 #include "Bullet.h"
 
-Bullet::Bullet(const Point &m_point): point(m_point){
+Bullet::Bullet(const Point &m_point): Entity(m_point){
     thread bulletThread(&Bullet::move, this);
     bulletThread.detach();
 }

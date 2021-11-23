@@ -5,7 +5,7 @@
 #include <thread>
 #include <Windows.h>
 #include "Player.h"
-#include "Alien.h"
+#include "Entity.h"
 #include "Bullet.h"
 #include "../Utilities/utilities.h"
 
@@ -24,7 +24,7 @@ class Game{
 private:
     static const int fieldH = 10, fieldW = 15;
     Player player{fieldW / 2};
-    vector<Alien> aliens;
+    vector<Entity*> entities;
     char field[fieldW][fieldH];
 };
 

@@ -1,16 +1,13 @@
 #ifndef ALIEN_H
 #define ALIEN_H
-#include <iostream>
-#include "Point.h"
-using namespace std;
+#include "Entity.h"
 
-class Alien{
+class Alien : Entity{
 public:
     Alien();
     ~Alien();
-
 private:
-    Point point;
+
 };
 
 #endif
