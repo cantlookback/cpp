@@ -2,11 +2,10 @@
 #define GAME_H
 #include <iostream>
 #include <vector>
-#include <thread>
 #include <Windows.h>
 #include "Player.h"
-#include "Entity.h"
 #include "Bullet.h"
+#include "Alien.h"
 #include "../Utilities/utilities.h"
 
 using namespace std;
