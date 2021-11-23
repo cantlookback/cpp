@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Alien.h"
 #include "Bullet.h"
+#include "../Utilities/utilities.h"
 
 using namespace std;
 

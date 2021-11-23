@@ -48,9 +48,9 @@ void Game::checkCollision(){
 void Game::gameCycle(){
     thread t1(&Player::move, &player);
     t1.detach();
-    for (int i = 0; i < 1000; i++){
+    for (int i = 0; i < 100; i++){
         printField();
         Sleep(100);
-        system("cls");
+        clearScreen();
     }
 }
