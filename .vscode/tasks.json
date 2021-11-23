@@ -79,6 +79,7 @@
                 "Game.cpp",
                 "Alien.cpp",
                 "Bullet.cpp",
+                "../Utilities/utilities.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
