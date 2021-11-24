@@ -1,4 +1,5 @@
 test/test.cpp
 test/test.exe
 lab5/lab5.exe
-SpaceInvaders\main.exe
+SpaceInvaders/main.exe
+CourseWork/main.cpp
