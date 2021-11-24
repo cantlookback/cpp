@@ -10,8 +10,8 @@ Bullet::~Bullet(){
 
 void Bullet::move(){
     while (alive){
+        cout << this_thread::get_id() << " BULLET THREAD";
         this->point.y++;
         this_thread::sleep_for(chrono::milliseconds(500));
     }
-    // bulletThread.join();
 }
