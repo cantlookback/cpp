@@ -23,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Space Invaders build"
+            "preLaunchTask": "Standard build"
         }
     ]
 }

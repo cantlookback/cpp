@@ -1,6 +1,12 @@
 {
     "C_Cpp.errorSquiggles": "Enabled",
     "files.associations": {
-        "thread": "cpp"
+        "thread": "cpp",
+        "vector": "cpp",
+        "chrono": "cpp",
+        "iostream": "cpp",
+        "mutex": "cpp",
+        "string": "cpp",
+        "ostream": "cpp"
     }
 }
