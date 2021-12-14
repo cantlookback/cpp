@@ -4,9 +4,9 @@
 using namespace std;
 
 int main(){
-    vector<int> floors;
-    int countFloors, turns, heroPower = 1;
-    int pos = 0;
+    vector<int64_t> floors;
+    int64_t countFloors, turns, heroPower = 1;
+    int64_t pos = 0;
     cin >> countFloors >> turns;
     floors.resize(countFloors);
     
@@ -25,7 +25,6 @@ int main(){
     }
 
     cout << heroPower;
-
 
     return 0;
 }

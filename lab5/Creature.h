@@ -24,5 +24,5 @@ protected:
     char typeOfCreature;
     Point point;
     char direction, tag;
-    int k, kk, age = 0, timeToLive, eated = 0, saturation = 0;
+    int k, kk, age = 0, timeToLive, saturation = 0;
 };

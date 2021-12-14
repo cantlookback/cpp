@@ -53,6 +53,7 @@ double Matrix::getDeterminant(){
         MathError mE;
         mE.print();
     }
+    return 0;
 }
 
 Matrix Matrix::Tmatrix(){

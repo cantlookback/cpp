@@ -2,7 +2,7 @@
 #define MATRIX_H
 #include <iostream>
 #include <cmath>
-#include "IError.h"
+#include "IError.cpp"
 using namespace std;
 class Matrix{
 public:
