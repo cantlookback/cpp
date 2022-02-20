@@ -1,33 +1,55 @@
 #include "Binarytree.h"
 
-BinaryTree::BinaryTree(const int &m_length, const int &m_base) : length(m_length){
-    tree = new int[m_length];
-    for (int i = 0; i < length; i++) tree[i] = 0;
-    tree[1] = m_base;
+void BinaryTree::show(BinaryTree *&Tree)            
+{
+	if (Tree != NULL)      
+	{
+	   show(Tree->left);              
+	   cout << Tree->x << '\t';          
+	   show(Tree->right);             
+	}
 }
-
-BinaryTree::~BinaryTree(){
-    delete tree;
+ 
+/*Добавили очистку памяти*/
+void BinaryTree::del(BinaryTree *&Tree){
+   if (Tree != NULL)        
+	{
+	   del(Tree->left);                
+	   del(Tree->right);             
+	   delete Tree;               
+	   Tree = NULL;                
+	}
+ 
 }
-
-void BinaryTree::addTree(const int &n, const int &i, const char &dir){
-    if (tree[i] == 0){
-        tree[i] = n;
-        return;
-    }
-    if (n < tree[i]){
-        addTree(n, 2*i, 'L');
-    } else {
-        addTree(n, 2*i+1, 'R');
-    }
-}
-
-void BinaryTree::printTree(){
-    cout << tree[1] << endl;
-    for (int i = 2; i < length; i++){
-        cout << tree[i] << ' ';
-        if (i == 3 || i == 7 || i == 15){
-            cout << endl;
-        }
-    }
+ 
+void BinaryTree::add_Node(int x,BinaryTree *&Tree)
+{
+	if (NULL == Tree)             
+	{
+		Tree = new BinaryTree;         
+		Tree->x = x;              
+		Tree->left = Tree->right = NULL; 
+	}
+ 
+                   if (x < Tree->x)   
+                      {
+                          if (Tree->left != NULL) add_Node(x, Tree->left); 
+                          else        
+                          {
+                              Tree->left = new BinaryTree;                
+                              Tree->left->left = Tree->left->right = NULL;   
+                              Tree->left->x = x;                     
+                          }
+                      }
+ 
+                    if (x > Tree->x)           
+                      {
+                          if (Tree->right != NULL) add_Node(x, Tree->right);
+                          else              
+                          {
+                              Tree->right = new BinaryTree;                
+                              Tree->right->left = Tree->right->right = NULL;   
+                              Tree->right->x = x;                   
+                          }
+                      }
 }

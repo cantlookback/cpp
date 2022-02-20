@@ -74,7 +74,7 @@ void El_gamal(){
     eg.printMessage();
 }
 
-/*int main() {
+int main() {
     //SetConsoleCP(1251);
     //SetConsoleOutputCP(1251);
     
@@ -109,4 +109,4 @@ void El_gamal(){
     }
     
     return 0;
-}*/
+}

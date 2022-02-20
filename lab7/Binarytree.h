@@ -5,14 +5,14 @@ using namespace std;
 
 class BinaryTree{
 public:
-    BinaryTree(const int &m_length, const int &m_base);
-    ~BinaryTree();
+    void show(BinaryTree *&Tree);
+    void del(BinaryTree *&Tree);
+    void add_Node(int x, BinaryTree *&Tree);
 
-    void addTree(const int &n, const int &i = 1, const char &dir = 'L');
-    void printTree();
-
-private:
-    int length;
-    int* tree;
+    int x;                           //То, что записываем в дерево
+    BinaryTree *left,*right; 
 };
+
+ostream& operator<<(ostream &os, const BinaryTree &tree);
+
 #endif

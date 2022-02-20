@@ -6,5 +6,5 @@
 using namespace std;
 
 void clearScreen();
-
+uint32_t fact(uint16_t n);
 #endif
